@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		ul{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		img{
+			vertical-align: top;
+		}
+			body{
+				width: 1020px;
+				height: 600px;
+				margin: 0 auto;
+				padding: 5px;
+				position: relative;
+			}
+			.bgbox{
+				margin: 1px;
+				border: 2px solid red;
+				float: left;
+			}
+			.bgbox ul{
+				position: absolute;
+				left: 0;
+				top:0;
+			}
+			.bgbox li{
+				position: absolute;
+				top: 0;
+				left: 0;
+				opacity: 0;
+				transform: scale(0.6);
+				transition: .5s;
+				
+			}
+			.box{
+				width:320px;
+				float: left;
+			}
+			.box ul{
+				width: 340px;
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+			.box li{
+				float: left;
+				transform: scale(0.9);
+				transition: 0.5s;
+			}
+			.box li:hover{
+				transform: scale(1);
+			}
+		    .bgbox .on{
+				position: relative;
+				z-index: 1;
+				-webkit-transform:scale(1) ;
+				transform: scale(1);
+				opacity: 1;
+			}
+		</style>
+	</head>
+	<script src="jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function (){
+			$('.box').find('li').mouseover(function (){
+				$('.bgbox').find('li').removeClass('on');
+				var num = $(this).index();
+				$('.bgbox').find('li').eq(num).addClass('on')
+			})
+		})
+	</script>
+	<body>
+		<div class="bgbox">
+			<ul>
+				<li class="on"><img src="images/ookamikodomo.jpg"/></li>
+				<li><img src="images/neragaku.jpg"/></li>
+				<li><img src="images/hotarubi.jpg"/></li>
+				<li><img src="images/aura.jpg"/></li>
+				<li><img src="images/tsuioku.jpg"/></li>
+				<li><img src="images/tokikake.jpg"/></li>
+			</ul>
+		</div>
+		<div class="box">
+			<ul>
+				<li><img src="images/ookamikodomo_.jpg"/></li>
+				<li><img src="images/neragaku_.jpg"/></li>
+				<li><img src="images/hotarubi_.jpg"/></li>
+				<li><img src="images/aura_.jpg"/></li>
+				<li><img src="images/tsuioku_.jpg"/></li>
+				<li><img src="images/tokikake_.jpg"/></li>
+			</ul>
+		</div>
+	</body>
+</html>
